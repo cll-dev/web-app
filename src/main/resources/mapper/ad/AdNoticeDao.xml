@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yitongyin.modules.ad.dao.AdNoticeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.yitongyin.modules.ad.entity.AdNoticeEntity" id="adNoticeMap">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="noticeType" column="notice_type"/>
+        <result property="publishTime" column="publish_time"/>
+        <result property="thumbnail" column="thumbnail"/>
+    </resultMap>
+
+    <select id="queryList" resultType="com.yitongyin.modules.ad.entity.AdNoticeEntity">
+		select * from ad_notice  order by publish_time desc limit 3
+	</select>
+
+    <select id="queryListByType" resultType="com.yitongyin.modules.ad.entity.AdNoticeEntity">
+		select * from ad_notice WHERE notice_type = #{type} order by publish_time desc limit #{count}
+	</select>
+
+</mapper>

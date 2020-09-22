@@ -1,0 +1,54 @@
+{
+  "yitongyin_material": {
+    "mappings": {
+      "bus_material": {
+        "properties": {
+          "bmtid": {
+            "type": "long"
+          },
+          "coverResId": {
+            "type": "long"
+          },
+          "createTime": {
+            "type": "long"
+          },
+          "fileResId": {
+            "type": "long"
+          },
+          "fileType": {
+            "type": "long"
+          },
+          "id": {
+            "type": "long"
+          },
+          "sendCounts": {
+            "type": "long"
+          },
+          "tagKey": {
+            "type": "text",
+            "analyzer": "ik_smart",
+            "search_analyzer": "ik_smart",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "title": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "viewCounts": {
+            "type": "long"
+          }
+        }
+      }
+    }
+  }
+}
